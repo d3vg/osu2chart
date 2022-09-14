@@ -3,6 +3,8 @@ A GUI tool for converting osu!mania maps to Clone Hero charts.
 
 This was made for those who prefer the charting workflow of the osu!mania editor over the charting workflow of Moonscraper and Feedback, however it can be used to just play around with, too.
 
+Here is a [YouTube video](https://www.youtube.com/watch?v=gpp6JAtrq2k) demonstrating the usage of the program.
+
 How to use
 ---
 1. Download and install the latest version of [Python](https://www.python.org/downloads/).
