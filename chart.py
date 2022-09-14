@@ -14,7 +14,7 @@ class ChartFile:
             "Artist": "",
             "Charter": "",
             "Offset": 0,
-            "Resolution": 192,
+            "Resolution": 96,
             "Player2": "bass",
             "Difficulty": 0,
             "PreviewStart": 0,
@@ -87,7 +87,7 @@ class NoteTrackSP:
         return f"{self._identifier} {self.note} {self.hold_time}"
 
 class ChartTrack:
-    def __init__(self, name, resolution=192):
+    def __init__(self, name, resolution=96):
         self.name = name
         self.resolution = resolution
         self.track_objects = {}
@@ -119,7 +119,7 @@ class ChartTrack:
 
 # Returns a ChartTrack that represents the [SyncTrack] section of a .chart
 # based off a given list of OsuTimingPoints and a resolution 
-def _generate_sync_track(timing_points, resolution=192):
+def _generate_sync_track(timing_points, resolution=96):
     sync_track = ChartTrack("SyncTrack", resolution)
 
     # The first timing_point is guaranteed and is eventually used as the offset in the .chart,
@@ -153,7 +153,7 @@ def _generate_sync_track(timing_points, resolution=192):
 
 # TODO: Use bookmarks to indicate section events
 # NOTE: Don't feel there is too much of a need for this, so might add later
-def _generate_events_track(timing_points, bookmarks, resolution=192):
+def _generate_events_track(timing_points, bookmarks, resolution=96):
     events_track = ChartTrack("Events", resolution)
 
     return events_track
@@ -162,7 +162,7 @@ def _generate_events_track(timing_points, bookmarks, resolution=192):
 # based off a name, given list of OsuTimingPoints, list of OsuHitObjects, key count, is co-op, and resolution
 #
 # Will return None if there are no hit objects in the list of OsuHitObjects
-def _generate_note_track(name, timing_points, hit_objects, key_count, is_coop, resolution=192):
+def _generate_note_track(name, timing_points, hit_objects, key_count, is_coop, resolution=96):
     note_track = ChartTrack(name, resolution)
 
     resolution_time = 0
@@ -318,7 +318,7 @@ def _generate_note_track(name, timing_points, hit_objects, key_count, is_coop, r
 class Chart:
     # Returns a Chart with the appropriate difficulties based off the given osu_files
     @staticmethod
-    def create_from_osu(source_osu_file, resolution=192, preview_length=0, use_unicode_metadata=False, use_tags_as_genre=False, expert=None, hard=None, medium=None, easy=None):
+    def create_from_osu(source_osu_file, resolution=96, preview_length=0, use_unicode_metadata=False, use_tags_as_genre=False, expert=None, hard=None, medium=None, easy=None):
         chart_file = ChartFile()
 
         if use_unicode_metadata:

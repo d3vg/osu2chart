@@ -37,7 +37,7 @@ class Osu2ChartApp:
         self._use_tags_as_genre = tk.IntVar(value=0)
 
         self._preview_length = tk.DoubleVar(value=0.0)
-        self._resolution = tk.IntVar(value=192)
+        self._resolution = tk.IntVar(value=96)
 
         self._save_path = tk.StringVar()
 
@@ -124,8 +124,8 @@ class Osu2ChartApp:
         self.spb_preview_length.grid(column=1, row=3)
 
         self.spb_resolution = ttk.Spinbox(self.lbf_options, textvariable=self._resolution)
-        self.spb_resolution.configure(from_=192, increment=1, to=480, wrap="false")
-        self.spb_resolution.set(192)
+        self.spb_resolution.configure(from_=96, increment=1, to=480, wrap="false")
+        self.spb_resolution.set(96)
         self.spb_resolution.grid(column=1, row=4)
 
         self.chk_tags_as_genre = ttk.Checkbutton(self.lbf_options, variable=self._use_tags_as_genre)
