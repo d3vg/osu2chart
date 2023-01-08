@@ -102,7 +102,8 @@ class Osu:
                 # Only append uninherited points (no SVs)
                 if parsed_timing_point[6] == "1":
                     timing_point = OsuTimingPoint(
-                        time=int(parsed_timing_point[0]),
+                        # very rarely the editor will spit out floating point time values, so double cast to be safe
+                        time=int(float(parsed_timing_point[0])),
                         beat_length=float(parsed_timing_point[1]),
                         meter=int(parsed_timing_point[2]),
                         sample_set=int(parsed_timing_point[3]),
