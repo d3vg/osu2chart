@@ -302,7 +302,7 @@ def _generate_note_track(name, timing_points, hit_objects, key_count, is_coop, r
                 hit_object_index += 1
 
                 # Break out after processing the last hit_object on the last timing_point
-                if hit_object_index == hit_object_count:
+                if hit_object_index >= hit_object_count:
                     finish_last_point = False
                     break
 
